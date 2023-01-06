@@ -5,15 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux/es/exports';
 import { store } from './store/store';
+import { PublicClientApplication } from "@azure/msal-browser";
+import { MsalProvider } from "@azure/msal-react";
+import { msalConfig } from './msalConfig';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+const msalInstance = new PublicClientApplication(msalConfig);
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-    <App />
-    </Provider>
+    <MsalProvider instance={msalInstance}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </MsalProvider>
   </React.StrictMode>
 );
 

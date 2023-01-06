@@ -1,11 +1,11 @@
-interface ProjectInfo {
+export interface ProjectInfo {
     projectName?:string,
     models?:Model[],
     createdBy?:string,
     creationDate?:string,
 }
 
-interface Model{
+export interface Model{
     modelName?:string,
     modelId?:number,
 }

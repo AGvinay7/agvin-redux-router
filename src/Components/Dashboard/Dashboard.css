@@ -1,0 +1,9 @@
+.main-area{
+    padding: 8em;
+    align-items:'center';
+    display: flex;
+    flex-direction: row;
+}
+.btn{
+    padding: 2em;
+}
